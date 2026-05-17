@@ -1,0 +1,1424 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "action",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "actor",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "AuditEntryAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "batchCode",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "farmer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum MushChainPH.Variety",
+						"name": "variety",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "quantityKg",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "BatchMinted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "vendor",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum MushChainPH.Condition",
+						"name": "condition",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "quantityReceived",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "DeliveryConfirmed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "pricePerKg",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "quantity",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "fullName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum MushChainPH.Role",
+						"name": "role",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "ParticipantRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "transporter",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "vehiclePlate",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "destination",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "ShipmentLogged",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "allBatchIds",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "auditLog",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "entryId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "action",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "actor",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "actorRole",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "details",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "batchAuditTrail",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "batchDelivery",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "batchShipment",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "batchTransfer",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "batches",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "batchCode",
+						"type": "string"
+					},
+					{
+						"internalType": "enum MushChainPH.Variety",
+						"name": "variety",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quantityKg",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "harvestTimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "farmer",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "farmName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "barangay",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "municipality",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "growingNotes",
+						"type": "string"
+					},
+					{
+						"internalType": "enum MushChainPH.BatchStatus",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "address",
+						"name": "currentOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "mintedAt",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_batchId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_quantityReceived",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "_condition",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "_discrepancyNotes",
+						"type": "string"
+					}
+				],
+				"name": "confirmDelivery",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_wallet",
+						"type": "address"
+					}
+				],
+				"name": "deactivateParticipant",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "deliveries",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "confirmationId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "vendor",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quantityReceived",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum MushChainPH.Condition",
+						"name": "conditionAtDelivery",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "discrepancyNotes",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "confirmedAt",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllBatches",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_entryId",
+						"type": "uint256"
+					}
+				],
+				"name": "getAuditEntry",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "action",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "actor",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "actorRole",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "details",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_batchId",
+						"type": "uint256"
+					}
+				],
+				"name": "getAuditReport",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "report",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_batchId",
+						"type": "uint256"
+					}
+				],
+				"name": "getBatchAuditTrail",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "entryIds",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "actions",
+						"type": "string[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "actors",
+						"type": "address[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "actorRoles",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "details",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "timestamps",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_batchId",
+						"type": "uint256"
+					}
+				],
+				"name": "getBatchStatus",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_batchId",
+						"type": "uint256"
+					}
+				],
+				"name": "getDeliveryRecord",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "vendor",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quantityReceived",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "condition",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "discrepancyNotes",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "confirmedAt",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_wallet",
+						"type": "address"
+					}
+				],
+				"name": "getParticipant",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "fullName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "role",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "organization",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "barangay",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "municipality",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "registeredAt",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_batchId",
+						"type": "uint256"
+					}
+				],
+				"name": "getProvenance",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "batchCode",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "variety",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quantityKg",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "farmName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "location",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "statusLabel",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "farmer",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "currentOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "harvestTimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "mintedAt",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_batchId",
+						"type": "uint256"
+					}
+				],
+				"name": "getShipmentRecord",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "transporter",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "vehiclePlate",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "departurePoint",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "destination",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "departureTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "estimatedArrival",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "conditionNotes",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isDelivered",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_batchId",
+						"type": "uint256"
+					}
+				],
+				"name": "getTransferRecord",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "fromParticipant",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "toParticipant",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "agreedPricePerKg",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quantityKg",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "transferredAt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "notes",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_batchId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_vehiclePlate",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_departurePoint",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_destination",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_estimatedHours",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_conditionNotes",
+						"type": "string"
+					}
+				],
+				"name": "logShipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "participants",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "fullName",
+						"type": "string"
+					},
+					{
+						"internalType": "enum MushChainPH.Role",
+						"name": "role",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "organization",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "barangay",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "municipality",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "registeredAt",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_wallet",
+						"type": "address"
+					}
+				],
+				"name": "reactivateParticipant",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "_variety",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_quantityKg",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_farmName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_barangay",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_municipality",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_growingNotes",
+						"type": "string"
+					}
+				],
+				"name": "registerBatch",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_wallet",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_fullName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "_role",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "_organization",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_barangay",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_municipality",
+						"type": "string"
+					}
+				],
+				"name": "registerParticipant",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "shipments",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "shipmentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "transporter",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "vehiclePlate",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "departurePoint",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "destination",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "departureTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "estimatedArrival",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "conditionNotes",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isDelivered",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "recordedAt",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_batchId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_trader",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_pricePerKg",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_notes",
+						"type": "string"
+					}
+				],
+				"name": "transferToTrader",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "transfers",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "transferId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "fromParticipant",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "toParticipant",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "agreedPricePerKg",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quantityKg",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "transferredAt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "notes",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"confirmDelivery(uint256,uint256,uint8,string)": {
+					"params": {
+						"_batchId": "The batch being confirmed",
+						"_condition": "0=Fresh, 1=Good, 2=Fair, 3=Damaged",
+						"_discrepancyNotes": "Notes on any shortage or damage found",
+						"_quantityReceived": "Actual kg received (may differ from shipped qty)"
+					}
+				},
+				"logShipment(uint256,string,string,string,uint256,string)": {
+					"params": {
+						"_batchId": "The batch being shipped",
+						"_conditionNotes": "Temperature or physical condition at pickup",
+						"_departurePoint": "Pickup barangay/location",
+						"_destination": "Delivery destination (market, hub, etc.)",
+						"_estimatedHours": "Estimated travel time in hours",
+						"_vehiclePlate": "Vehicle plate number"
+					}
+				},
+				"registerBatch(uint8,uint256,string,string,string,string)": {
+					"params": {
+						"_barangay": "Barangay of the farm",
+						"_farmName": "Name of the farm",
+						"_growingNotes": "Optional substrate or condition notes",
+						"_municipality": "Municipality/province",
+						"_quantityKg": "Harvest weight in kilograms",
+						"_variety": "0=Oyster, 1=Shiitake, 2=Button, 3=Reishi, 4=LionsMane"
+					}
+				},
+				"registerParticipant(address,string,uint8,string,string,string)": {
+					"details": "In Remix, call this from Account[0] (admin) for each of         Account[1..4], choosing the appropriate role number:           2 = Farmer | 3 = Trader | 4 = Transporter | 5 = Vendor"
+				},
+				"transferToTrader(uint256,address,uint256,string)": {
+					"params": {
+						"_batchId": "The batch to transfer",
+						"_notes": "Optional purchase notes",
+						"_pricePerKg": "Agreed price per kg (symbolic — no actual payment)",
+						"_trader": "Address of the registered Trader"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"confirmDelivery(uint256,uint256,uint8,string)": {
+					"notice": "Vendor confirms receipt of the batch, closing the chain of custody.         This is the final, immutable event for this batch on the blockchain."
+				},
+				"deactivateParticipant(address)": {
+					"notice": "Admin can deactivate a participant (e.g., revoke accreditation)."
+				},
+				"getAllBatches()": {
+					"notice": "Returns all batch IDs ever registered on this contract."
+				},
+				"getAuditEntry(uint256)": {
+					"notice": "Returns a single audit log entry by its entry ID.         Use this if you want to inspect one specific event."
+				},
+				"getAuditReport(uint256)": {
+					"notice": "Returns a fully formatted, human-readable audit report string         for a batch — all events concatenated into one readable block.         Great for a quick copy-paste summary or presentation demo.         Example output for a completed batch:         \"         [1] BATCH_REGISTERED | Role: Farmer | Actor: 0xAB..cd              Farm: Dela Cruz Mushroom Farm | Variety: Oyster | Qty: 50 kg | ...              Time: 1746000000         ──────────────────────────────────────────         [2] OWNERSHIP_TRANSFERRED | Role: Farmer | Actor: 0xAB..cd              From Farmer: 0xAB..cd -> Trader: 0xCD..ef | Price/kg: 85 | ...              Time: 1746000060         ...\""
+				},
+				"getBatchAuditTrail(uint256)": {
+					"notice": "Returns the FULL audit trail for a batch in a single call.         Every field of every audit entry is returned as parallel arrays —         index [0] = first event, index [1] = second event, etc.         In Remix, the decoded output will show 6 labeled arrays:           entryIds   — the internal audit entry IDs           actions    — e.g. \"BATCH_REGISTERED\", \"OWNERSHIP_TRANSFERRED\"           actors     — wallet address of who performed each action           actorRoles — \"Farmer\", \"Trader\", \"Transporter\", \"Vendor\"           details    — full human-readable description of what happened           timestamps — unix timestamp of each event         You can read all 4 supply chain events for a batch at once,         with no need to call getAuditEntry() separately."
+				},
+				"getBatchStatus(uint256)": {
+					"notice": "Returns the current status of a batch as a human-readable label."
+				},
+				"getDeliveryRecord(uint256)": {
+					"notice": "Returns the delivery confirmation for a batch."
+				},
+				"getParticipant(address)": {
+					"notice": "Returns a participant's profile."
+				},
+				"getProvenance(uint256)": {
+					"notice": "Returns the full provenance summary of a batch.         Simulates what a consumer would see after scanning the QR code."
+				},
+				"getShipmentRecord(uint256)": {
+					"notice": "Returns the shipment record for a batch."
+				},
+				"getTransferRecord(uint256)": {
+					"notice": "Returns the ownership transfer record for a batch."
+				},
+				"logShipment(uint256,string,string,string,uint256,string)": {
+					"notice": "Transporter logs pickup and shipment of a batch.         The Trader (current owner) must have handed off to the Transporter.         In this prototype, the Transporter calls this function directly         once they have physically received the batch from the Trader."
+				},
+				"reactivateParticipant(address)": {
+					"notice": "Admin can reactivate a participant."
+				},
+				"registerBatch(uint8,uint256,string,string,string,string)": {
+					"notice": "Farmer registers a harvested mushroom batch.         This mints a \"product token\" on the blockchain."
+				},
+				"registerParticipant(address,string,uint8,string,string,string)": {
+					"notice": "Admin registers a supply chain participant and assigns their role."
+				},
+				"transferToTrader(uint256,address,uint256,string)": {
+					"notice": "Farmer sells and transfers a batch to a registered Trader.         Caller must be the current owner (Farmer at this stage)."
+				}
+			},
+			"notice": "============================================================  MushChain PH — Farm-to-Market Traceability Smart Contract  Dr. Yanga's Colleges, Inc. (DYCI)  Prepared by: Patricia Mae Polintan & Franc Alvenn Dela Cruz ============================================================  HOW TO USE IN REMIX IDE:  ─────────────────────────────────────────────────────────  1. Paste this file into Remix (remix.ethereum.org)  2. Compile with Solidity ^0.8.20  3. Deploy using \"JavaScript VM (London)\" — no wallet needed  4. Remix gives you multiple test accounts. Assign them:       Account[0] → Admin       (deploy from this account)       Account[1] → Farmer       Account[2] → Trader       Account[3] → Transporter       Account[4] → Vendor  5. Follow the STEP-BY-STEP SIMULATION GUIDE at the bottom. ============================================================",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"MushChainPH (1).sol": "MushChainPH"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"MushChainPH (1).sol": {
+			"keccak256": "0x6f1127c85293a3be2a02a4507c31c83564e56a6b9c0c4d8f0d4b2e144f1fc92f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1b462e440386cbf23412d0bfb72ac3a54dbca3f30598d229d50c7e9b2f4bda6e",
+				"dweb:/ipfs/QmPvGezsdjr4kGjqjUJaBKWDMv3c6J9Wo9saSC53Vswo77"
+			]
+		}
+	},
+	"version": 1
+}
