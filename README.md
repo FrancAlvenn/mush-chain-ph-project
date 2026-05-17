@@ -10,7 +10,7 @@
 
 | 🏫 Institution | 📅 Submitted | 👨‍🏫 Submitted To |
 |:---:|:---:|:---:|
-| Dr. Yanga's Colleges, Inc. (DYCI) | May 2, 2026 | Peter Paul Ocampo |
+| Dr. Yanga's Colleges, Inc. (DYCI) | May 17, 2026 | Peter Paul Ocampo |
 
 **Prepared by:** Patricia Mae Polintan · Franc Alvenn Dela Cruz  
 **College of Computer Studies** — Bocaue, Bulacan
@@ -33,7 +33,6 @@
 - [Running the Simulation in Remix IDE](#-running-the-simulation-in-remix-ide)
 - [Audit Trail & Traceability](#-audit-trail--traceability)
 - [Scope & Limitations](#-scope--limitations)
-- [Regulatory Compliance](#-regulatory-compliance)
 - [Project Roadmap](#-project-roadmap)
 
 ---
@@ -464,19 +463,6 @@ Every supply chain event automatically appends an entry to the batch's **immutab
 
 ---
 
-## ⚖️ Regulatory Compliance
-
-MushChain PH is developed in full respect of applicable Philippine laws:
-
-| Law / Order | Relevance |
-|---|---|
-| 🔒 **RA 10173** — Data Privacy Act of 2012 | Participant personal data stored with safeguards; sensitive pricing data excluded from public portal |
-| 🥬 **RA 10611** — Food Safety Act of 2013 | System explicitly designed to meet traceability mandates for food producers in formal markets |
-| 🌱 **DA AO No. 8, s. 2017** — Good Agricultural Practices | Batch registration module aligns with DA-GAP farm-level record-keeping requirements |
-| 🎓 **CHED CMO No. 20, s. 2020** — Research Ethics | IRB clearance from DYCI required before participant-based testing |
-
----
-
 ## 📅 Project Roadmap
 
 | Phase | Activities | Deliverables | Timeline |
@@ -486,20 +472,6 @@ MushChain PH is developed in full respect of applicable Philippine laws:
 | **3** | Frontend & backend development, blockchain node setup, QR module | Working Prototype (internal) | Month 3–5 |
 | **4** | User acceptance testing with 20–30 selected participants across all four roles | Test Reports, Bug Fixes, UAT Sign-Off | Month 5–6 |
 | **5** | Final refinement, documentation, staging deployment, board presentation | Final System, Full Documentation, Presentation Deck | Month 6–7 |
-
----
-
-## 🤝 Institutional Partners & Stakeholders
-
-| Stakeholder | Type | Role in MushChain PH |
-|---|---|---|
-| **PAMSG** — Philippine Association of Mushroom Suppliers and Growers | Institutional Client | System governance and deployment champion |
-| **PMGA** — Philippine Mushroom Growers Association | Institutional Client | Member network for participant onboarding |
-| **Bureau of Plant Industry (BPI)** | Regulator | Future regulatory database integration |
-| **Food and Drug Administration (FDA)** | Regulator | Food safety compliance monitoring |
-| **Department of Agriculture (DA)** | Regulator | Digital Agriculture Roadmap alignment |
-| **Central Luzon State University** | Research Partner | MOA signed June 2025 for mushroom R&D piloting |
-| **Aurora State College of Technology** | Research Partner | MOA signed June 2025 for mushroom R&D piloting |
 
 ---
 
